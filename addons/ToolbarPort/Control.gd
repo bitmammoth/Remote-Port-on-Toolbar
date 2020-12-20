@@ -1,4 +1,4 @@
-tool
+@tool
 extends CenterContainer
 
 signal setting_changed(port)

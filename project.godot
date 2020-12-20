@@ -8,24 +8,19 @@
 
 config_version=4
 
-_global_script_classes=[  ]
-_global_script_class_icons={
-
-}
-
 [application]
 
 config/name="Remote Port on Toolbar"
-run/main_scene="res://addons/ToolbarPort/Control.tscn"
+run/main_scene="res://Main.tscn"
 config/icon="res://icon.png"
 
 [custom_settings]
 
-remote_port=6110
+remote_port=6029
 
 [editor_plugins]
 
-enabled=PoolStringArray( "ToolbarPort" )
+enabled=PackedStringArray( "ToolbarPort" )
 
 [rendering]
 

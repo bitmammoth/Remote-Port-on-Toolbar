@@ -1,13 +1,14 @@
-tool
+@tool
 extends EditorPlugin
 
 var toolbar
 var remote_port_path = "custom_settings/remote_port"
 
 func _enter_tree():
+	var this = self
 	toolbar = preload("res://addons/ToolbarPort/Control.tscn").instance()
-	toolbar.connect("setting_changed", self, "_on_setting_changed")
-	ProjectSettings.connect("script_changed", self, "_on_script_changed")
+	toolbar.connect("setting_changed", Callable(this, "_on_setting_changed"))
+	ProjectSettings.connect("script_changed", Callable(this, "_on_script_changed"))
 	add_control_to_container(EditorPlugin.CONTAINER_TOOLBAR, toolbar)
 	
 	if ProjectSettings.has_setting(remote_port_path):
